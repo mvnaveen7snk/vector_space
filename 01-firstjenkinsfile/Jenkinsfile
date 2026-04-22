@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('My_First_Stage') {
+            steps {
+                echo 'Hello world'
+            }
+        }
+
+        stage('My_Second_Stage') {
+            steps {
+                sh '''
+                date
+                uptime
+                whoami
+                free -h
+                '''
+            }
+        }
+
+    }
+}
